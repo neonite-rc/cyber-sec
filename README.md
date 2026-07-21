@@ -1,43 +1,39 @@
-# 🐍 Snake in a PDF
+# Cyber-Sec
 
-This is a fully playable Snake game embedded inside a PDF file, using form field objects and JavaScript keystroke events.
+Cybersecurity experiments and vulnerability demonstrations. Exploring how file formats, protocols, and systems can be abused for unexpected behavior.
 
-## 💡 How It Works
+## Projects
 
-Inspired by the brilliant [Tetris in a PDF](https://th0mas.nl/2025/01/12/tetris-in-a-pdf/) by [Th0mas](https://th0mas.nl), this version uses the same approach:
-- The game is rendered using monochrome form fields.
-- Player input is captured via keyboard entry in a text field.
-- No external dependencies — it all runs inside the PDF viewer.
+### PDF-Snake
+A proof-of-concept demonstrating PDF field object abuse to render a monochrome grid with keyboard input handling — effectively a game engine inside a PDF.
 
-> **Note:** Works best in Chromium-based PDF viewers (PDFium) and Firefox (PDF.js). Not guaranteed to work in Adobe Acrobat or other viewers.
+**Fork of:** [pdftris by ThomasRinsma](https://github.com/ThomasRinsma/pdftris)
 
-## How to run?
-Compile and run the snake_game.py to generate the game pdf or simply download it from the repo 
+**Mechanism:** Abuses PDF field objects to render a monochrome grid, combined with keystroke-entry in a text field to receive inputs. Works in PDFium (Chromium-based browsers) and PDF.js (Firefox).
 
-## 🎮 Controls
+**Why this matters:** Demonstrates that PDFs are not passive documents — they contain a Turing-complete scripting environment that security teams often overlook.
 
-Use arrow keys to control the snake.
+**Controls:**
+- Arrow keys to control the snake
+- Ensure the input field is focused
 
-- ⬅️ Left  
-- ➡️ Right  
-- ⬆️ Up  
-- ⬇️ Down  
+**Tested in:**
+- Chrome/Chromium (PDFium)
+- Firefox (PDF.js)
 
-Make sure the input field is focused!
+## Stack
+PDF specification, JavaScript (PDF), Python (generation), forensic analysis
 
-## 📷 Preview
+## Status
+✅ PDF-Snake functional — tested in Chrome and Firefox PDF viewers.
 
-![demo]
-<p float="left">
-  <img src="./preview%201.png" />
-  <img src="preview2.png" />
-</p>
+## Future
+- [ ] PDF malware analysis sandbox
+- [ ] Protocol fuzzing experiments
+- [ ] Web application security assessments
 
-## 📄 Credits
-
+## Credits
 - **Original concept**: [Tetris in a PDF](https://th0mas.nl/2025/01/12/tetris-in-a-pdf) by [Th0mas](https://th0mas.nl)
-- **Snake adaptation**: [neonite](https://github.com/neonite2217)
 
-## 📜 License
-
-[MIT](LICENSE)
+## License
+MIT
